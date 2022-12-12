@@ -12,6 +12,8 @@ sqlalchemy = "^1.4.45"
 alembic = "^1.8.1"
 sqlacodegen = "^2.3.0"
 mysql-connector-python = "^8.0.31"
+fastapi = "^0.88.0"
+uvicorn = "^0.20.0"
 
 
 [build-system]

@@ -1,3 +1,5 @@
 - Alterar os modelos
 $ alembic revision --autogenerate -m "mensagem"
 $ alembic upgrade head
+
+uvicorn main:app --reload
