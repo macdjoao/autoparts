@@ -14,6 +14,8 @@ sqlacodegen = "^2.3.0"
 mysql-connector-python = "^8.0.31"
 fastapi = "^0.88.0"
 uvicorn = "^0.20.0"
+blue = "^0.9.1"
+isort = "^5.11.1"
 
 
 [build-system]

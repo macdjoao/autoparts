@@ -1,7 +1,7 @@
 # coding: utf-8
-from sqlalchemy import Column, DECIMAL, ForeignKey, Integer, String
-from sqlalchemy.orm import relationship
+from sqlalchemy import DECIMAL, Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 metadata = Base.metadata
