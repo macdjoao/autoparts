@@ -17,6 +17,7 @@ uvicorn = "^0.20.0"
 blue = "^0.9.1"
 isort = "^5.11.1"
 pydantic = "^1.10.2"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 
 
 [build-system]

@@ -37,7 +37,7 @@ class Model(BaseModel):
 class ReadModel(Model):
     model_id: str
 
-class DeleteBrand(BaseModels):
+class DeleteModel(BaseModels):
     model_code: str
 
 # Part
@@ -52,5 +52,5 @@ class Part(BaseModel):
 class ReadPart(Part):
     part_id: str
 
-class DeleteBrand(BaseModels):
+class DeletePart(BaseModels):
     part_code: str
