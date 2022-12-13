@@ -12,7 +12,7 @@ class CreateUser(User):
 class ReadUser(User):
     user_id: int
 
-class DeleteUser(BaseModels):
+class DeleteUser(BaseModel):
     user_email: str
 
 # Brand
@@ -24,7 +24,7 @@ class Brand(BaseModel):
 class ReadBrand(Brand):
     brand_id: str
 
-class DeleteBrand(BaseModels):
+class DeleteBrand(BaseModel):
     brand_code: str
 
 # Model
@@ -37,7 +37,7 @@ class Model(BaseModel):
 class ReadModel(Model):
     model_id: str
 
-class DeleteModel(BaseModels):
+class DeleteModel(BaseModel):
     model_code: str
 
 # Part
@@ -52,5 +52,5 @@ class Part(BaseModel):
 class ReadPart(Part):
     part_id: str
 
-class DeletePart(BaseModels):
+class DeletePart(BaseModel):
     part_code: str
