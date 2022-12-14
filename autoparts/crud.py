@@ -7,13 +7,13 @@ from models import User
 # Create User
 def create_user(db: Session, user: CreateUser):
     try:
-        if get_user_by_email(db=db, user_email=user.user_email):
+        if get_user_by_email(db=db, email=user.email):
             return 'Esse email já está cadastrado'
-        hashed_password = get_hashed_password(user.user_password)
+        hashed_password = get_hashed_password(user.password)
         new_user = User(
-        user_name=user.user_name,
-        user_email=user.user_email,
-        user_password=hashed_password)
+        name=user.name,
+        email=user.email,
+        password=hashed_password)
         db.add(new_user)
         db.commit()
         db.refresh(new_user)
