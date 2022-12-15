@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get('/')
 def home(db: Session = Depends(get_db)):
-    return 'Olá mundo'
+    return 'Olá mundo.'
 
 @app.post('/users/')
 def post_user(user: CreateUser, db: Session = Depends(get_db)):
