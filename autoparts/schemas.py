@@ -13,10 +13,6 @@ class CreateUser(User):
     password: str
 
 
-class ReadUser(User):
-    email: int
-
-
 class DeleteUser(BaseModel):
     email: str
 

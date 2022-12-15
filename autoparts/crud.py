@@ -28,6 +28,26 @@ def create_user(db: Session, user: CreateUser):
 
 
 # Read User
+def read_all_users(db: Session):
+    try:
+        users = db.query(User).all()
+        if users:
+            return users
+        return 'Nenhum usuário cadastrado'
+    except Exception as exc:
+        print(f'read_all_users: {exc}')
+        return 'Erro na aplicação.'
+
+def read_user(db: Session, email: str):
+    try:
+        user = db.query(User).filter(User.email == email).first()
+        if user:
+            return user
+        return f'Nenhum registro encontrado com o email {email}'
+    except Exception as exc:
+        print(f'read_user: {exc}')
+        return 'Erro na aplicação.'
+
 # Update User
 # Delete User
 
