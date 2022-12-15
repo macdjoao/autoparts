@@ -1,8 +1,9 @@
-from sqlalchemy.orm import Session
-from schemas import CreateUser
 from auth import get_hashed_password
-from services import get_user_by_email, generate_full_name
 from models import User
+from schemas import CreateUser
+from services import generate_full_name, get_user_by_email
+from sqlalchemy.orm import Session
+
 
 # Create User
 def create_user(db: Session, user: CreateUser):
@@ -11,11 +12,12 @@ def create_user(db: Session, user: CreateUser):
             return 'Esse email já está cadastrado.'
         hashed_password = get_hashed_password(user.password)
         new_user = User(
-        first_name=user.first_name.capitalize(),
-        last_name=user.last_name.capitalize(),
-        full_name=generate_full_name(user.first_name, user.last_name),
-        email=user.email,
-        password=hashed_password)
+            first_name=user.first_name.capitalize(),
+            last_name=user.last_name.capitalize(),
+            full_name=generate_full_name(user.first_name, user.last_name),
+            email=user.email,
+            password=hashed_password,
+        )
         db.add(new_user)
         db.commit()
         db.refresh(new_user)

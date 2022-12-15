@@ -1,5 +1,6 @@
-from sqlalchemy.orm import Session
 from models import User
+from sqlalchemy.orm import Session
+
 
 def get_user_by_email(db: Session, email: str):
     try:
@@ -8,6 +9,7 @@ def get_user_by_email(db: Session, email: str):
         return False
     except Exception as exc:
         print(f'get_user_by_email: {exc}')
+
 
 def generate_full_name(first_name: str, last_name: str):
     try:
