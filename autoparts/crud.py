@@ -1,14 +1,14 @@
 from auth import get_hashed_password
 from models import User
 from schemas import CreateUser
-from services import generate_full_name, get_user_by_email
+from services import generate_full_name, email_already_registered
 from sqlalchemy.orm import Session
 
 
 # Create User
 def create_user(db: Session, user: CreateUser):
     try:
-        if get_user_by_email(db=db, email=user.email):
+        if email_already_registered(db=db, email=user.email):
             return 'Esse email já está cadastrado.'
         hashed_password = get_hashed_password(user.password)
         new_user = User(
