@@ -13,10 +13,6 @@ class CreateUser(User):
     password: str
 
 
-class DeleteUser(BaseModel):
-    email: str
-
-
 # Brand
 
 

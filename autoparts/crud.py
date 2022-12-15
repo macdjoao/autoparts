@@ -1,7 +1,7 @@
 from auth import get_hashed_password
 from models import User
 from schemas import CreateUser
-from services import generate_full_name, email_already_registered
+from services import email_already_registered, generate_full_name
 from sqlalchemy.orm import Session
 
 
@@ -38,6 +38,7 @@ def read_all_users(db: Session):
         print(f'read_all_users: {exc}')
         return 'Erro na aplicação.'
 
+
 def read_user(db: Session, email: str):
     try:
         user = db.query(User).filter(User.email == email).first()
@@ -48,8 +49,22 @@ def read_user(db: Session, email: str):
         print(f'read_user: {exc}')
         return 'Erro na aplicação.'
 
+
 # Update User
+
 # Delete User
+def remove_user(db: Session, email: str):
+    try:
+        user = db.query(User).filter(User.email == email).first()
+        if user:
+            db.delete(user)
+            db.commit()
+            return f'Usuário {user.full_name} com email {user.email} deletado com sucesso.'
+        return f'Nenhum registro encontrado com o email {email}'
+    except Exception as exc:
+        print(f'delete_user: {exc}')
+        return 'Erro na aplicação.'
+
 
 # Create Brand
 # Read Brand
