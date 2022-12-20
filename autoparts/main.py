@@ -3,6 +3,7 @@ from database import get_db
 from fastapi import Depends, FastAPI
 from schemas import CreateUser
 from sqlalchemy.orm import Session
+from dev_services import inject_fake_users
 
 app = FastAPI()
 
@@ -35,3 +36,8 @@ def get_user(email: str, db: Session = Depends(get_db)):
 def delete_user(email: str, db: Session = Depends(get_db)):
     """Rota para deletar usuário."""
     return remove_user(db=db, email=email)
+
+# @app.post('/inject_fake_users/', summary='Injetar usuários fake')
+# def fake(db: Session = Depends(get_db)):
+#     """Rota para injetar usuários fakes para testes"""
+#     return inject_fake_users(db=db)
