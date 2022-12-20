@@ -13,3 +13,4 @@ Trata-se de um projeto pessoal para estudos e práticas. Para a utilização da 
 - Ferramenta para processo de evolução do banco de dados: Alembic (1.8)
 - ORM: SQLAlchemy (1.4)
 - Uso de esquemas nas rotas da API: Pydantic (1.10)
+- Gerar dados fake para testes: Faker (15.3)
